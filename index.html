@@ -578,6 +578,57 @@
       color: var(--brown-light);
     }
 
+    /* ── LIGHTBOX ── */
+    .lightbox-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(26, 18, 8, 0.92);
+      z-index: 999;
+      justify-content: center;
+      align-items: center;
+      padding: 24px;
+      cursor: zoom-out;
+    }
+
+    .lightbox-overlay.active {
+      display: flex;
+    }
+
+    .lightbox-overlay img {
+      max-width: 92vw;
+      max-height: 88vh;
+      border-radius: 10px;
+      box-shadow: 0 24px 80px rgba(0,0,0,0.6);
+      object-fit: contain;
+    }
+
+    .lightbox-close {
+      position: fixed;
+      top: 20px;
+      right: 28px;
+      font-size: 32px;
+      color: var(--cream);
+      cursor: pointer;
+      line-height: 1;
+      opacity: 0.7;
+      transition: opacity 0.2s;
+    }
+
+    .lightbox-close:hover {
+      opacity: 1;
+    }
+
+    .sql-img {
+      cursor: zoom-in;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .sql-img:hover {
+      transform: scale(1.02);
+      box-shadow: 0 8px 32px var(--shadow-deep);
+    }
+
     /* ── FOOTER ── */
     footer {
       background: var(--black);
@@ -833,8 +884,9 @@
 
         <div class="skill-group" style="padding:0; overflow:hidden;">
           <img src="SQL1.png" alt="SQL Sample 1 – SELECT statements and JOINs"
-            style="width:100%; display:block; border-radius:10px 10px 0 0; cursor:pointer;"
-            onclick="this.closest('.skill-group').classList.toggle('expanded')" />
+            class="sql-img"
+            style="width:100%; display:block; border-radius:10px 10px 0 0;"
+            onclick="openLightbox(this.src)" />
           <div style="padding:20px 24px;">
             <p style="font-size:11px; font-weight:600; letter-spacing:0.15em; text-transform:uppercase; color:var(--taupe); margin-bottom:6px;">SQL Sample 1</p>
             <p style="font-size:14px; color:var(--brown-dark); line-height:1.7;">
@@ -845,8 +897,9 @@
 
         <div class="skill-group" style="padding:0; overflow:hidden;">
           <img src="SQL2.png" alt="SQL Sample 2 – Variables and unique record queries"
-            style="width:100%; display:block; border-radius:10px 10px 0 0; cursor:pointer;"
-            onclick="this.closest('.skill-group').classList.toggle('expanded')" />
+            class="sql-img"
+            style="width:100%; display:block; border-radius:10px 10px 0 0;"
+            onclick="openLightbox(this.src)" />
           <div style="padding:20px 24px;">
             <p style="font-size:11px; font-weight:600; letter-spacing:0.15em; text-transform:uppercase; color:var(--taupe); margin-bottom:6px;">SQL Sample 2</p>
             <p style="font-size:14px; color:var(--brown-dark); line-height:1.7;">
@@ -989,10 +1042,30 @@
     </div>
   </section>
 
+  <!-- LIGHTBOX -->
+  <div class="lightbox-overlay" id="lightbox" onclick="closeLightbox()">
+    <span class="lightbox-close" onclick="closeLightbox()">&#x2715;</span>
+    <img id="lightbox-img" src="" alt="SQL Sample enlarged" />
+  </div>
+
   <!-- FOOTER -->
   <footer>
     <p>© 2026 Tyra Forbes · All rights reserved</p>
   </footer>
 
+  <script>
+    function openLightbox(src) {
+      document.getElementById('lightbox-img').src = src;
+      document.getElementById('lightbox').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeLightbox();
+    });
+  </script>
 </body>
 </html>
