@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tyra Forbes Portfolio</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background: #0f172a;
+      color: #e2e8f0;
+    }
+
+    .container {
+      padding: 50px 20px;
+      max-width: 950px;
+      margin: auto;
+    }
+
+    h1 {
+      font-size: 42px;
+      margin-bottom: 8px;
+    }
+
+    h2 {
+      color: #38bdf8;
+      margin-bottom: 15px;
+      margin-top: 0;
+    }
+
+    h3 {
+      margin-top: 0;
+      color: #ffffff;
+    }
+
+    .section {
+      margin-bottom: 60px;
+    }
+
+    .hero {
+      padding-top: 20px;
+    }
+
+    .subtitle {
+      font-size: 18px;
+      margin-bottom: 12px;
+    }
+
+    .intro {
+      max-width: 700px;
+      line-height: 1.7;
+    }
+
+    .project,
+    .card {
+      background: #1e293b;
+      padding: 25px;
+      border-radius: 14px;
+      margin-top: 20px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    }
+
+    .button-group {
+      margin-top: 20px;
+    }
+
+    button {
+      padding: 12px 18px;
+      margin-top: 10px;
+      margin-right: 10px;
+      border: none;
+      background: #38bdf8;
+      color: #0f172a;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    button:hover {
+      background: #0ea5e9;
+      transform: translateY(-2px);
+    }
+
+    a {
+      color: #7dd3fc;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    ul {
+      padding-left: 20px;
+      line-height: 1.8;
+    }
+
+    p {
+      line-height: 1.7;
+    }
+
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    .skill-pill {
+      background: #334155;
+      color: #e2e8f0;
+      padding: 10px 14px;
+      border-radius: 999px;
+      font-size: 14px;
+    }
+
+    .contact p {
+      margin: 10px 0;
+    }
+
+    .footer {
+      text-align: center;
+      color: #94a3b8;
+      padding-bottom: 20px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 32px;
+      }
+
+      .container {
+        padding: 35px 16px;
+      }
+
+      button {
+        width: 100%;
+        margin-right: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <div class="section hero">
+      <h1>Tyra Forbes</h1>
+      <p class="subtitle"><strong>Data Analyst | Operations Analyst | Client Success Analyst</strong></p>
+      <p class="intro">
+        I turn data into actionable insights that improve business performance, support decision-making,
+        and help teams work more efficiently. I am building a career in data analytics with strengths in
+        SQL, Excel, Tableau, Python, and customer support operations.
+      </p>
+
+      <div class="button-group">
+        <a href="Tyra_Forbes_Resume.pdf" download>
+          <button>Download Resume</button>
+        </a>
+
+        <button onclick="document.getElementById('projects').scrollIntoView({ behavior: 'smooth' })">
+          View Projects
+        </button>
+      </div>
+    </div>
+
+    <div class="section card">
+      <h2>What I Do</h2>
+      <ul>
+        <li>Analyze data to identify trends, patterns, and performance insights</li>
+        <li>Build dashboards and reports using Excel, Tableau, and other tools</li>
+        <li>Support better business decisions through data-driven recommendations</li>
+        <li>Use customer support and operations experience to solve real business problems</li>
+      </ul>
+    </div>
+
+    <div class="section" id="projects">
+      <h2>Projects</h2>
+
+      <div class="project">
+        <h3>Job Allocation System</h3>
+        <p>
+          Built a job allocation system designed to match students with jobs using fit scores,
+          allocation rules, and validation logic.
+        </p>
+        <p><strong>Tools:</strong> Node.js, SQL, API</p>
+
+        <ul>
+          <li>Prevents duplicate job allocations</li>
+          <li>Uses scoring logic to improve match quality</li>
+          <li>Supports a more efficient and structured placement process</li>
+          <li>Demonstrates analytical thinking through business rules and system logic</li>
+        </ul>
+
+        <div class="button-group">
+          <a href="https://job-allocation-system.onrender.com/" target="_blank">
+            <button>Live Demo</button>
+          </a>
+
+          <a href="https://github.com/tkeyamaf/job-allocation-system" target="_blank">
+            <button>View Code</button>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="section card">
+      <h2>Skills</h2>
+      <div class="skills-list">
+        <span class="skill-pill">SQL</span>
+        <span class="skill-pill">Excel</span>
+        <span class="skill-pill">Tableau</span>
+        <span class="skill-pill">Python</span>
+        <span class="skill-pill">Salesforce</span>
+        <span class="skill-pill">Zendesk</span>
+        <span class="skill-pill">Data Analysis</span>
+        <span class="skill-pill">Reporting</span>
+        <span class="skill-pill">Data Visualization</span>
+        <span class="skill-pill">Problem Solving</span>
+      </div>
+    </div>
+
+    <div class="section card">
+      <h2>About Me</h2>
+      <p>
+        I am an entry-level data analyst with over 5 years of technical support experience and a strong
+        interest in data reporting, business analysis, and operational improvement. My background has
+        helped me develop strong problem-solving, customer support, and communication skills, which I now
+        combine with analytics tools to turn data into meaningful insights.
+      </p>
+      <p>
+        I am currently seeking opportunities in Data Analytics, Operations, and Client Success where I can
+        contribute to smarter business decisions and continued process improvement.
+      </p>
+    </div>
+
+    <div class="section card contact">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:tkeyamaf@gmail.com">tkeyamaf@gmail.com</a></p>
+      <p>Phone: <a href="tel:7752476114">775-247-6114</a></p>
+      <p>
+        LinkedIn:
+        <a href="https://www.linkedin.com/in/tyra-forbes-7684551a1/" target="_blank">
+          View Profile
+        </a>
+      </p>
+    </div>
+
+    <div class="footer">
+      <p>© 2026 Tyra Forbes. All rights reserved.</p>
+    </div>
+
+  </div>
+</body>
+</html>
