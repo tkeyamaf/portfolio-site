@@ -3,255 +3,912 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tyra Forbes Portfolio</title>
+  <title>Tyra Forbes | Data Analyst</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
+    *, *::before, *::after {
+      box-sizing: border-box;
       margin: 0;
-      background: #0f172a;
-      color: #e2e8f0;
+      padding: 0;
     }
 
-    .container {
-      padding: 50px 20px;
-      max-width: 950px;
-      margin: auto;
+    :root {
+      --cream: #f7f3ee;
+      --warm-white: #fdfaf6;
+      --taupe: #b5a898;
+      --brown-light: #c9b9a8;
+      --brown-mid: #8c7b6b;
+      --brown-dark: #5c4a3a;
+      --espresso: #2e1f13;
+      --black: #1a1208;
+      --card-bg: #f0ebe4;
+      --border: #ddd5c8;
+      --shadow: rgba(94, 74, 58, 0.10);
+      --shadow-deep: rgba(46, 31, 19, 0.15);
     }
 
-    h1 {
-      font-size: 42px;
-      margin-bottom: 8px;
+    html {
+      scroll-behavior: smooth;
     }
 
-    h2 {
-      color: #38bdf8;
-      margin-bottom: 15px;
-      margin-top: 0;
-    }
-
-    h3 {
-      margin-top: 0;
-      color: #ffffff;
-    }
-
-    .section {
-      margin-bottom: 60px;
-    }
-
-    .hero {
-      padding-top: 20px;
-    }
-
-    .subtitle {
-      font-size: 18px;
-      margin-bottom: 12px;
-    }
-
-    .intro {
-      max-width: 700px;
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--warm-white);
+      color: var(--espresso);
       line-height: 1.7;
     }
 
-    .project,
-    .card {
-      background: #1e293b;
-      padding: 25px;
-      border-radius: 14px;
-      margin-top: 20px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 100;
+      background: rgba(253, 250, 246, 0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      padding: 18px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
-    .button-group {
-      margin-top: 20px;
-    }
-
-    button {
-      padding: 12px 18px;
-      margin-top: 10px;
-      margin-right: 10px;
-      border: none;
-      background: #38bdf8;
-      color: #0f172a;
-      font-weight: bold;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: 0.2s ease;
-    }
-
-    button:hover {
-      background: #0ea5e9;
-      transform: translateY(-2px);
-    }
-
-    a {
-      color: #7dd3fc;
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--espresso);
+      letter-spacing: 0.04em;
       text-decoration: none;
     }
 
-    a:hover {
-      text-decoration: underline;
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
     }
 
-    ul {
+    .nav-links a {
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--brown-mid);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--espresso);
+    }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(135deg, var(--warm-white) 0%, var(--cream) 100%);
+      padding: 120px 40px 80px;
+    }
+
+    .hero-inner {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      gap: 80px;
+      width: 100%;
+    }
+
+    .hero-text {
+      flex: 1;
+    }
+
+    .hero-eyebrow {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--brown-mid);
+      margin-bottom: 18px;
+    }
+
+    .hero-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 68px;
+      font-weight: 500;
+      line-height: 1.1;
+      color: var(--espresso);
+      margin-bottom: 16px;
+    }
+
+    .hero-title {
+      font-size: 16px;
+      font-weight: 400;
+      color: var(--brown-mid);
+      margin-bottom: 28px;
+      letter-spacing: 0.02em;
+    }
+
+    .hero-intro {
+      font-size: 17px;
+      line-height: 1.8;
+      color: var(--brown-dark);
+      max-width: 540px;
+      margin-bottom: 40px;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      padding: 14px 32px;
+      background: var(--espresso);
+      color: var(--cream);
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.25s, transform 0.2s;
+    }
+
+    .btn-primary:hover {
+      background: var(--brown-dark);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      display: inline-block;
+      padding: 14px 32px;
+      background: transparent;
+      color: var(--espresso);
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: 1.5px solid var(--espresso);
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.25s, color 0.25s, transform 0.2s;
+    }
+
+    .btn-outline:hover {
+      background: var(--espresso);
+      color: var(--cream);
+      transform: translateY(-2px);
+    }
+
+    .hero-photo-wrap {
+      flex-shrink: 0;
+      width: 340px;
+      height: 420px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 24px 60px var(--shadow-deep);
+      position: relative;
+    }
+
+    .hero-photo-wrap::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.4);
+      z-index: 1;
+    }
+
+    .hero-photo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+    }
+
+    /* ── SECTIONS ── */
+    section {
+      padding: 100px 40px;
+    }
+
+    .section-inner {
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--taupe);
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 44px;
+      font-weight: 500;
+      color: var(--espresso);
+      margin-bottom: 40px;
+      line-height: 1.2;
+    }
+
+    .divider {
+      width: 48px;
+      height: 2px;
+      background: var(--brown-light);
+      margin-bottom: 40px;
+    }
+
+    /* ── STORY ── */
+    .story-section {
+      background: var(--cream);
+    }
+
+    .story-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    .story-text p {
+      font-size: 16px;
+      color: var(--brown-dark);
+      line-height: 1.9;
+      margin-bottom: 20px;
+    }
+
+    .story-text p:last-child {
+      margin-bottom: 0;
+    }
+
+    .story-stats {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .stat-card {
+      background: var(--warm-white);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 28px 32px;
+      box-shadow: 0 4px 20px var(--shadow);
+    }
+
+    .stat-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 48px;
+      font-weight: 600;
+      color: var(--espresso);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .stat-label {
+      font-size: 14px;
+      color: var(--brown-mid);
+      font-weight: 400;
+    }
+
+    /* ── PROJECT ── */
+    .project-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 48px;
+      box-shadow: 0 8px 40px var(--shadow);
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 40px;
+      align-items: start;
+    }
+
+    .project-tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--brown-mid);
+      background: var(--warm-white);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 5px 12px;
+      margin-bottom: 20px;
+    }
+
+    .project-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 34px;
+      font-weight: 500;
+      color: var(--espresso);
+      margin-bottom: 16px;
+    }
+
+    .project-desc {
+      font-size: 16px;
+      color: var(--brown-dark);
+      line-height: 1.8;
+      margin-bottom: 28px;
+      max-width: 560px;
+    }
+
+    .project-highlights {
+      list-style: none;
+      margin-bottom: 36px;
+    }
+
+    .project-highlights li {
+      font-size: 15px;
+      color: var(--brown-dark);
+      padding: 8px 0;
       padding-left: 20px;
+      position: relative;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .project-highlights li:last-child {
+      border-bottom: none;
+    }
+
+    .project-highlights li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--taupe);
+      font-size: 13px;
+    }
+
+    .project-tools {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 32px;
+    }
+
+    .tool-chip {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--brown-dark);
+      background: var(--warm-white);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 6px 14px;
+    }
+
+    .project-links {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      min-width: 160px;
+    }
+
+    /* ── SKILLS ── */
+    .skills-section {
+      background: var(--cream);
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .skill-group {
+      background: var(--warm-white);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 32px;
+      box-shadow: 0 4px 16px var(--shadow);
+    }
+
+    .skill-group-title {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--taupe);
+      margin-bottom: 20px;
+    }
+
+    .skill-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .skill-list li {
+      font-size: 15px;
+      color: var(--brown-dark);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .skill-list li::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--brown-light);
+      flex-shrink: 0;
+    }
+
+    /* ── VALUE ── */
+    .value-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-bottom: 48px;
+    }
+
+    .value-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 32px;
+      box-shadow: 0 4px 16px var(--shadow);
+    }
+
+    .value-icon {
+      font-size: 22px;
+      margin-bottom: 14px;
+    }
+
+    .value-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 500;
+      color: var(--espresso);
+      margin-bottom: 10px;
+    }
+
+    .value-desc {
+      font-size: 14px;
+      color: var(--brown-mid);
       line-height: 1.8;
     }
 
-    p {
-      line-height: 1.7;
+    .roles-bar {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 32px 40px;
+      box-shadow: 0 4px 16px var(--shadow);
     }
 
-    .skills-list {
+    .roles-bar p {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--taupe);
+      margin-bottom: 18px;
+    }
+
+    .roles-list {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 15px;
+      gap: 12px;
     }
 
-    .skill-pill {
-      background: #334155;
-      color: #e2e8f0;
-      padding: 10px 14px;
-      border-radius: 999px;
+    .role-tag {
       font-size: 14px;
+      font-weight: 500;
+      color: var(--espresso);
+      background: var(--warm-white);
+      border: 1.5px solid var(--espresso);
+      border-radius: 4px;
+      padding: 8px 20px;
     }
 
-    .contact p {
-      margin: 10px 0;
+    /* ── CONTACT ── */
+    .contact-section {
+      background: var(--espresso);
     }
 
-    .footer {
+    .contact-section .section-label {
+      color: var(--taupe);
+    }
+
+    .contact-section .section-title {
+      color: var(--cream);
+    }
+
+    .contact-section .divider {
+      background: var(--brown-mid);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    .contact-intro {
+      font-size: 16px;
+      color: var(--brown-light);
+      line-height: 1.9;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .contact-item {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .contact-item-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--taupe);
+    }
+
+    .contact-item a,
+    .contact-item span {
+      font-size: 16px;
+      color: var(--cream);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .contact-item a:hover {
+      color: var(--brown-light);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--black);
+      padding: 28px 40px;
       text-align: center;
-      color: #94a3b8;
-      padding-bottom: 20px;
-      font-size: 14px;
     }
 
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 32px;
+    footer p {
+      font-size: 13px;
+      color: var(--brown-mid);
+      letter-spacing: 0.04em;
+    }
+
+    /* ── MOBILE ── */
+    @media (max-width: 768px) {
+      nav {
+        padding: 16px 20px;
       }
 
-      .container {
-        padding: 35px 16px;
+      .nav-links {
+        display: none;
       }
 
-      button {
+      .hero {
+        padding: 100px 20px 60px;
+      }
+
+      .hero-inner {
+        flex-direction: column-reverse;
+        gap: 40px;
+      }
+
+      .hero-name {
+        font-size: 46px;
+      }
+
+      .hero-photo-wrap {
         width: 100%;
-        margin-right: 0;
+        height: 320px;
+      }
+
+      section {
+        padding: 70px 20px;
+      }
+
+      .section-title {
+        font-size: 34px;
+      }
+
+      .story-grid,
+      .contact-grid,
+      .value-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .project-card {
+        grid-template-columns: 1fr;
+        padding: 32px 24px;
+      }
+
+      .project-links {
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+
+      .btn-primary, .btn-outline {
+        width: 100%;
+        text-align: center;
       }
     }
   </style>
 </head>
 <body>
-  <div class="container">
 
-    <div class="section hero">
-      <h1>Tyra Forbes</h1>
-      <p class="subtitle"><strong>Data Analyst | Operations Analyst | Client Success Analyst</strong></p>
-      <p class="intro">
-        I turn data into actionable insights that improve business performance, support decision-making,
-        and help teams work more efficiently. I am building a career in data analytics with strengths in
-        SQL, Excel, Tableau, Python, and customer support operations.
-      </p>
+  <!-- NAV -->
+  <nav>
+    <a href="#hero" class="nav-logo">Tyra Forbes</a>
+    <ul class="nav-links">
+      <li><a href="#story">My Story</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#value">Why Me</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
-      <div class="button-group">
-        <a href="Tyra_Forbes_Resume.pdf" download>
-          <button>Download Resume</button>
-        </a>
-
-        <button onclick="document.getElementById('projects').scrollIntoView({ behavior: 'smooth' })">
-          View Projects
-        </button>
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-inner">
+      <div class="hero-text">
+        <p class="hero-eyebrow">Data Analyst &nbsp;·&nbsp; Operations &nbsp;·&nbsp; Client Success</p>
+        <h1 class="hero-name">Tyra<br/>Forbes</h1>
+        <p class="hero-title">Turning data into decisions that move businesses forward.</p>
+        <p class="hero-intro">
+          I bring 5+ years of frontline technical support experience into every data project I touch —
+          which means I don't just analyze numbers, I understand the people and processes behind them.
+          I build clean reports, uncover meaningful patterns, and translate insights into action.
+        </p>
+        <div class="btn-group">
+          <a href="Tyra_Forbes_Resume.pdf" download class="btn-primary">Download Resume</a>
+          <a href="#projects" class="btn-outline">View My Work</a>
+        </div>
+      </div>
+      <div class="hero-photo-wrap">
+        <img src="tyra-headshot.png" alt="Tyra Forbes" />
       </div>
     </div>
+  </section>
 
-    <div class="section card">
-      <h2>What I Do</h2>
-      <ul>
-        <li>Analyze data to identify trends, patterns, and performance insights</li>
-        <li>Build dashboards and reports using Excel, Tableau, and other tools</li>
-        <li>Support better business decisions through data-driven recommendations</li>
-        <li>Use customer support and operations experience to solve real business problems</li>
-      </ul>
-    </div>
-
-    <div class="section" id="projects">
-      <h2>Projects</h2>
-
-      <div class="project">
-        <h3>Job Allocation System</h3>
-        <p>
-          Built a job allocation system designed to match students with jobs using fit scores,
-          allocation rules, and validation logic.
-        </p>
-        <p><strong>Tools:</strong> Node.js, SQL, API</p>
-
-        <ul>
-          <li>Prevents duplicate job allocations</li>
-          <li>Uses scoring logic to improve match quality</li>
-          <li>Supports a more efficient and structured placement process</li>
-          <li>Demonstrates analytical thinking through business rules and system logic</li>
-        </ul>
-
-        <div class="button-group">
-          <a href="https://job-allocation-system.onrender.com/" target="_blank">
-            <button>Live Demo</button>
-          </a>
-
-          <a href="https://github.com/tkeyamaf/job-allocation-system" target="_blank">
-            <button>View Code</button>
-          </a>
+  <!-- STORY -->
+  <section class="story-section" id="story">
+    <div class="section-inner">
+      <p class="section-label">Background</p>
+      <h2 class="section-title">My Story</h2>
+      <div class="divider"></div>
+      <div class="story-grid">
+        <div class="story-text">
+          <p>
+            I didn't start in analytics — I started where the data lives: on the front lines.
+            For over five years, I worked in technical support, sitting at the intersection of
+            customer problems, system behavior, and operational gaps. I answered the questions
+            no dashboard could anticipate, and I learned to see patterns in the chaos.
+          </p>
+          <p>
+            Over time, I realized the most impactful thing I could do wasn't just solve individual
+            problems — it was understand why those problems kept happening. That curiosity pulled me
+            toward data. I started asking better questions, building reports, and finding ways to
+            surface insights that teams could actually use.
+          </p>
+          <p>
+            Today I combine that real-world operational grounding with technical skills in SQL, Python,
+            Tableau, and Excel to deliver analysis that is both rigorous and practical. I know what
+            it looks like when processes break, and I know how to use data to fix them.
+          </p>
+        </div>
+        <div class="story-stats">
+          <div class="stat-card">
+            <div class="stat-number">5+</div>
+            <div class="stat-label">Years in technical support & operations</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">6</div>
+            <div class="stat-label">Core analytics & reporting tools</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">1</div>
+            <div class="stat-label">Clear goal: making data useful for real decisions</div>
+          </div>
         </div>
       </div>
     </div>
+  </section>
 
-    <div class="section card">
-      <h2>Skills</h2>
-      <div class="skills-list">
-        <span class="skill-pill">SQL</span>
-        <span class="skill-pill">Excel</span>
-        <span class="skill-pill">Tableau</span>
-        <span class="skill-pill">Python</span>
-        <span class="skill-pill">Salesforce</span>
-        <span class="skill-pill">Zendesk</span>
-        <span class="skill-pill">Data Analysis</span>
-        <span class="skill-pill">Reporting</span>
-        <span class="skill-pill">Data Visualization</span>
-        <span class="skill-pill">Problem Solving</span>
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="section-inner">
+      <p class="section-label">Featured Work</p>
+      <h2 class="section-title">Projects</h2>
+      <div class="divider"></div>
+
+      <div class="project-card">
+        <div>
+          <span class="project-tag">Node.js · SQL · API</span>
+          <h3 class="project-name">Job Allocation System</h3>
+          <p class="project-desc">
+            Designed and built a structured allocation system that matches students with job
+            opportunities using fit scores, business rules, and validation logic — reducing
+            duplicate placements and improving match quality end to end.
+          </p>
+          <ul class="project-highlights">
+            <li>Prevents duplicate job allocations through validation logic</li>
+            <li>Fit scoring improves placement quality and reduces manual effort</li>
+            <li>Structured rules make the allocation process auditable and consistent</li>
+            <li>Demonstrates analytical thinking applied to a real operational problem</li>
+          </ul>
+          <div class="project-tools">
+            <span class="tool-chip">Node.js</span>
+            <span class="tool-chip">SQL</span>
+            <span class="tool-chip">REST API</span>
+            <span class="tool-chip">Business Logic</span>
+            <span class="tool-chip">Data Validation</span>
+          </div>
+        </div>
+        <div class="project-links">
+          <a href="https://job-allocation-system.onrender.com/" target="_blank" class="btn-primary" style="text-align:center;">Live Demo</a>
+          <a href="https://github.com/tkeyamaf/job-allocation-system" target="_blank" class="btn-outline" style="text-align:center;">View Code</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="skills-section" id="skills">
+    <div class="section-inner">
+      <p class="section-label">Capabilities</p>
+      <h2 class="section-title">Skills & Tools</h2>
+      <div class="divider"></div>
+      <div class="skills-grid">
+        <div class="skill-group">
+          <p class="skill-group-title">Data & Analytics</p>
+          <ul class="skill-list">
+            <li>SQL</li>
+            <li>Python</li>
+            <li>Excel (Advanced)</li>
+            <li>Data Analysis</li>
+            <li>Data Visualization</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <p class="skill-group-title">Reporting & BI</p>
+          <ul class="skill-list">
+            <li>Tableau</li>
+            <li>Dashboards & Reports</li>
+            <li>KPI Tracking</li>
+            <li>Trend Analysis</li>
+            <li>Business Reporting</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <p class="skill-group-title">Operations & Support</p>
+          <ul class="skill-list">
+            <li>Salesforce</li>
+            <li>Zendesk</li>
+            <li>Customer Support Ops</li>
+            <li>Problem Solving</li>
+            <li>Process Improvement</li>
+          </ul>
+        </div>
       </div>
     </div>
+  </section>
 
-    <div class="section card">
-      <h2>About Me</h2>
-      <p>
-        I am an entry-level data analyst with over 5 years of technical support experience and a strong
-        interest in data reporting, business analysis, and operational improvement. My background has
-        helped me develop strong problem-solving, customer support, and communication skills, which I now
-        combine with analytics tools to turn data into meaningful insights.
-      </p>
-      <p>
-        I am currently seeking opportunities in Data Analytics, Operations, and Client Success where I can
-        contribute to smarter business decisions and continued process improvement.
-      </p>
+  <!-- VALUE / WHY ME -->
+  <section id="value">
+    <div class="section-inner">
+      <p class="section-label">What I Bring</p>
+      <h2 class="section-title">Why Work With Me</h2>
+      <div class="divider"></div>
+
+      <div class="value-grid">
+        <div class="value-card">
+          <div class="value-icon">◈</div>
+          <h4 class="value-title">Context Others Miss</h4>
+          <p class="value-desc">
+            Years on the support floor taught me how businesses actually operate — not just how
+            they're supposed to. I bring that context to every analysis I produce.
+          </p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">◈</div>
+          <h4 class="value-title">Insights That Are Actually Useful</h4>
+          <p class="value-desc">
+            I don't just surface numbers — I translate them into clear, actionable recommendations
+            that stakeholders can understand and act on immediately.
+          </p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">◈</div>
+          <h4 class="value-title">Communication Across Teams</h4>
+          <p class="value-desc">
+            I've spent years bridging the gap between technical systems and non-technical people.
+            I speak both languages fluently, making cross-functional collaboration natural.
+          </p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">◈</div>
+          <h4 class="value-title">Drive to Keep Growing</h4>
+          <p class="value-desc">
+            I made a deliberate career shift because I wanted to create more impact. That
+            intentionality shows up in how I approach every project — with focus and follow-through.
+          </p>
+        </div>
+      </div>
+
+      <div class="roles-bar">
+        <p>Open to opportunities in</p>
+        <div class="roles-list">
+          <span class="role-tag">Data Analytics</span>
+          <span class="role-tag">Operations Analysis</span>
+          <span class="role-tag">Business Intelligence</span>
+          <span class="role-tag">Reporting & Insights</span>
+          <span class="role-tag">Client Success</span>
+          <span class="role-tag">Business Support</span>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <div class="section card contact">
-      <h2>Contact</h2>
-      <p>Email: <a href="mailto:tkeyamaf@gmail.com">tkeyamaf@gmail.com</a></p>
-      <p>Phone: <a href="tel:7752476114">775-247-6114</a></p>
-      <p>
-        LinkedIn:
-        <a href="https://www.linkedin.com/in/tyra-forbes-7684551a1/" target="_blank">
-          View Profile
-        </a>
-      </p>
+  <!-- CONTACT -->
+  <section class="contact-section" id="contact">
+    <div class="section-inner">
+      <p class="section-label">Get In Touch</p>
+      <h2 class="section-title">Let's Connect</h2>
+      <div class="divider"></div>
+      <div class="contact-grid">
+        <p class="contact-intro">
+          I'm currently open to new opportunities in data analytics, operations, and client success.
+          If you're looking for someone who combines analytical skills with real operational experience —
+          I'd love to hear from you.
+        </p>
+        <div class="contact-links">
+          <div class="contact-item">
+            <span class="contact-item-label">Email</span>
+            <a href="mailto:tkeyamaf@gmail.com">tkeyamaf@gmail.com</a>
+          </div>
+          <div class="contact-item">
+            <span class="contact-item-label">Phone</span>
+            <a href="tel:7752476114">775-247-6114</a>
+          </div>
+          <div class="contact-item">
+            <span class="contact-item-label">LinkedIn</span>
+            <a href="https://www.linkedin.com/in/tyra-forbes-7684551a1/" target="_blank">View Profile</a>
+          </div>
+          <div class="contact-item" style="margin-top:8px;">
+            <a href="Tyra_Forbes_Resume.pdf" download class="btn-primary" style="display:inline-block; text-align:center;">Download Resume</a>
+          </div>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <div class="footer">
-      <p>© 2026 Tyra Forbes. All rights reserved.</p>
-    </div>
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 Tyra Forbes · All rights reserved</p>
+  </footer>
 
-  </div>
 </body>
 </html>
