@@ -168,8 +168,36 @@
     .stat-number { font-family: 'Cormorant Garamond', serif; font-size: 48px; font-weight: 600; color: var(--espresso); line-height: 1; margin-bottom: 8px; }
     .stat-label { font-size: 14px; color: var(--brown-mid); font-weight: 400; }
 
+    /* ── EXPERIENCE ── */
+    .experience-section { background: var(--cream); }
+    .exp-grid { display: grid; grid-template-columns: 200px 1fr; gap: 0; }
+    .exp-timeline { position: relative; padding-right: 40px; }
+    .exp-timeline::after { content: ''; position: absolute; right: 0; top: 8px; bottom: 0; width: 2px; background: var(--border); }
+    .exp-date { font-size: 12px; font-weight: 600; color: var(--taupe); letter-spacing: 0.08em; text-transform: uppercase; line-height: 1.5; padding-top: 4px; }
+    .exp-entries { display: flex; flex-direction: column; gap: 48px; padding-left: 40px; }
+    .exp-entry { position: relative; }
+    .exp-entry::before { content: ''; position: absolute; left: -48px; top: 8px; width: 12px; height: 12px; border-radius: 50%; background: var(--sage); border: 2px solid var(--warm-white); box-shadow: 0 0 0 2px var(--sage); }
+    .exp-role { font-size: 17px; font-weight: 600; color: var(--espresso); margin-bottom: 2px; }
+    .exp-company { font-size: 14px; color: var(--sage); font-weight: 500; margin-bottom: 4px; }
+    .exp-location { font-size: 13px; color: var(--taupe); margin-bottom: 14px; }
+    .exp-bullets { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .exp-bullets li { font-size: 14px; color: var(--brown-dark); line-height: 1.7; padding-left: 18px; position: relative; }
+    .exp-bullets li::before { content: '→'; position: absolute; left: 0; color: var(--sage); font-size: 12px; top: 2px; }
+
+    .exp-block { display: flex; gap: 40px; margin-bottom: 48px; }
+    .exp-block:last-child { margin-bottom: 0; }
+    .exp-block-date { flex-shrink: 0; width: 160px; font-size: 12px; font-weight: 600; color: var(--taupe); letter-spacing: 0.08em; text-transform: uppercase; line-height: 1.5; padding-top: 6px; text-align: right; border-right: 2px solid var(--border); padding-right: 28px; }
+    .exp-block-content { flex: 1; position: relative; }
+    .exp-block-content::before { content: ''; position: absolute; left: -36px; top: 8px; width: 12px; height: 12px; border-radius: 50%; background: var(--sage); border: 2px solid var(--cream); box-shadow: 0 0 0 2px var(--sage); }
+
+    .edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 48px; }
+    .edu-card { background: var(--warm-white); border: 1px solid var(--border); border-radius: 10px; padding: 28px 32px; box-shadow: 0 4px 16px var(--shadow); }
+    .edu-degree { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 500; color: var(--espresso); margin-bottom: 6px; }
+    .edu-school { font-size: 14px; font-weight: 600; color: var(--sage); margin-bottom: 4px; }
+    .edu-detail { font-size: 13px; color: var(--brown-mid); }
+
     /* ── RESUME ── */
-    .resume-section { background: var(--cream); }
+    .resume-section { background: var(--warm-white); }
     .resume-inner { display: grid; grid-template-columns: 1fr auto; gap: 60px; align-items: center; }
     .resume-text { font-size: 17px; color: var(--brown-dark); line-height: 1.9; }
 
@@ -214,6 +242,10 @@
       .skills-grid { grid-template-columns: 1fr; }
       .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 32px; }
       .resume-inner { grid-template-columns: 1fr; gap: 28px; }
+      .exp-block { flex-direction: column; gap: 12px; }
+      .exp-block-date { width: 100%; text-align: left; border-right: none; border-left: 3px solid var(--sage); padding-right: 0; padding-left: 14px; }
+      .exp-block-content::before { display: none; }
+      .edu-grid { grid-template-columns: 1fr; }
       .project-card { padding: 28px 20px; }
       .project-btn-row, .btn-group { flex-direction: column; }
       .btn-primary, .btn-outline, .btn-sage { width: 100%; text-align: center; }
@@ -230,6 +262,7 @@
       <li><a href="#projects">Projects</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
       <li><a href="#resume">Resume</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -247,7 +280,7 @@
         </p>
         <div class="btn-group">
           <a href="#projects" class="btn-sage">View Tableau Dashboards</a>
-          <a href="Tyra_Forbes_Resume.pdf" download class="btn-primary">Download Resume</a>
+          <a href="Tyra_Resume_TD.pdf" download class="btn-primary">Download Resume</a>
           <a href="#contact" class="btn-outline">Contact Me</a>
         </div>
       </div>
@@ -642,6 +675,92 @@
     </div>
   </section>
 
+  <!-- EXPERIENCE -->
+  <section class="experience-section" id="experience">
+    <div class="section-inner">
+      <p class="section-label">Work History</p>
+      <h2 class="section-title">Professional Experience</h2>
+      <div class="divider"></div>
+
+      <div class="exp-block">
+        <div class="exp-block-date">08/2024<br/>Current</div>
+        <div class="exp-block-content">
+          <p class="exp-role">Analyst</p>
+          <p class="exp-company">TransUnion</p>
+          <p class="exp-location">Alpharetta, GA (Remote)</p>
+          <ul class="exp-bullets">
+            <li>Developed and maintained reports and dashboards to support internal stakeholders, translating business requirements into actionable data insights</li>
+            <li>Analyzed dispute and operational data using SQL to identify trends, data inconsistencies, and process improvement opportunities</li>
+            <li>Collaborated with cross-functional teams to resolve data issues and improve reporting accuracy and efficiency</li>
+            <li>Partnered with stakeholders to understand reporting needs and deliver data-driven solutions aligned with business goals</li>
+            <li>Ensured data integrity by validating datasets and monitoring data quality across reporting systems</li>
+            <li>Supported ongoing reporting processes by troubleshooting data discrepancies and optimizing data workflows</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-block">
+        <div class="exp-block-date">06/2023<br/>08/2024</div>
+        <div class="exp-block-content">
+          <p class="exp-role">Jr. Analyst</p>
+          <p class="exp-company">TransUnion</p>
+          <p class="exp-location">Alpharetta, GA (Remote)</p>
+          <ul class="exp-bullets">
+            <li>Wrote and optimized SQL queries to analyze system logs, identify discrepancies, and troubleshoot data-related issues</li>
+            <li>Monitored and reported on key KPIs including resolution time, performance metrics, and customer satisfaction</li>
+            <li>Partnered with development and operations teams to resolve data and system issues impacting business processes</li>
+            <li>Maintained detailed documentation of data findings and reporting outputs</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-block">
+        <div class="exp-block-date">03/2020<br/>03/2023</div>
+        <div class="exp-block-content">
+          <p class="exp-role">Service Help Desk Team Lead</p>
+          <p class="exp-company">Asurison</p>
+          <p class="exp-location">Atlanta, GA (Remote)</p>
+          <ul class="exp-bullets">
+            <li>Led a team supporting technical operations while identifying opportunities to improve efficiency through data tracking and reporting</li>
+            <li>Created documentation and reporting processes to standardize performance tracking and issue resolution</li>
+            <li>Collaborated with IT and business teams to implement system improvements and monitor results</li>
+            <li>Analyzed support trends to identify recurring issues and recommend data-driven solutions</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-block">
+        <div class="exp-block-date">03/2020<br/>03/2021</div>
+        <div class="exp-block-content">
+          <p class="exp-role">Data Analytics Intern</p>
+          <p class="exp-company">Miles College</p>
+          <p class="exp-location">Birmingham, AL</p>
+          <ul class="exp-bullets">
+            <li>Cleaned, transformed, and analyzed datasets using SQL and Python to support reporting and insights</li>
+            <li>Built interactive Tableau dashboards to visualize key metrics and present findings to stakeholders</li>
+            <li>Created reports and presentations that translated complex data into clear business insights</li>
+            <li>Applied data analysis techniques including data wrangling, visualization, and trend analysis</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="divider" style="margin-top:16px;"></div>
+      <p class="section-label" style="margin-bottom:16px;">Education & Certifications</p>
+      <div class="edu-grid">
+        <div class="edu-card">
+          <p class="edu-degree">B.S. Management Information Systems</p>
+          <p class="edu-school">Miles College &nbsp;·&nbsp; Birmingham, AL</p>
+          <p class="edu-detail">Vice President, Miles Tech Club</p>
+        </div>
+        <div class="edu-card">
+          <p class="edu-degree">Google Data Analytics Certificate</p>
+          <p class="edu-school">Google</p>
+          <p class="edu-detail">Data analysis, SQL, visualization, and reporting</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- RESUME -->
   <section class="resume-section" id="resume">
     <div class="section-inner">
@@ -650,11 +769,11 @@
       <div class="divider"></div>
       <div class="resume-inner">
         <p class="resume-text">
-          View my resume to learn more about my experience in data analysis, SQL reporting,
-          Tableau dashboard development, and technical operations. Available for Data Analyst,
-          Tableau Developer, and SQL Reporting roles.
+          Download my full resume to learn more about my experience as a Data Analyst at TransUnion,
+          my SQL and Tableau work, and my background in data-driven operations. Available for
+          Data Analyst, Tableau Developer, and SQL Reporting roles.
         </p>
-        <a href="Tyra_Forbes_Resume.pdf" download class="btn-primary" style="white-space:nowrap;">Download Resume</a>
+        <a href="Tyra_Resume_TD.pdf" download class="btn-primary" style="white-space:nowrap;">Download Resume</a>
       </div>
     </div>
   </section>
@@ -689,7 +808,7 @@
             <a href="https://github.com/tkeyamaf" target="_blank">github.com/tkeyamaf</a>
           </div>
           <div class="contact-item" style="margin-top:8px;">
-            <a href="Tyra_Forbes_Resume.pdf" download class="btn-primary" style="display:inline-block; text-align:center;">Download Resume</a>
+            <a href="Tyra_Resume_TD.pdf" download class="btn-primary" style="display:inline-block; text-align:center;">Download Resume</a>
           </div>
         </div>
       </div>
