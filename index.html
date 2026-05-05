@@ -3,14 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tyra Forbes | Analyst</title>
+  <title>Tyra Forbes | Data Analyst & Tableau Developer</title>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <style>
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
       --cream: #f7f3ee;
@@ -25,684 +21,202 @@
       --border: #ddd5c8;
       --shadow: rgba(94, 74, 58, 0.10);
       --shadow-deep: rgba(46, 31, 19, 0.15);
+      --sage: #6b8c6b;
+      --sage-mid: #5a7a5a;
+      --sage-light: #e8f0e8;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      background: var(--warm-white);
-      color: var(--espresso);
-      line-height: 1.7;
-    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: var(--warm-white); color: var(--espresso); line-height: 1.7; }
 
     /* ── NAV ── */
     nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 100;
-      background: rgba(253, 250, 246, 0.92);
-      backdrop-filter: blur(10px);
+      position: fixed; top: 0; width: 100%; z-index: 100;
+      background: rgba(253,250,246,0.95); backdrop-filter: blur(10px);
       border-bottom: 1px solid var(--border);
-      padding: 18px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      padding: 16px 40px;
+      display: flex; justify-content: space-between; align-items: center;
     }
+    .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600; color: var(--espresso); letter-spacing: 0.04em; text-decoration: none; }
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+    .nav-links a { font-size: 13px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--brown-mid); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--espresso); }
 
-    .nav-logo {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 22px;
-      font-weight: 600;
-      color: var(--espresso);
-      letter-spacing: 0.04em;
-      text-decoration: none;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 32px;
-      list-style: none;
-    }
-
-    .nav-links a {
-      font-size: 13px;
-      font-weight: 500;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--brown-mid);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-
-    .nav-links a:hover {
-      color: var(--espresso);
-    }
-
-    /* ── HERO ── */
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      background: linear-gradient(135deg, var(--warm-white) 0%, var(--cream) 100%);
-      padding: 120px 40px 80px;
-    }
-
-    .hero-inner {
-      max-width: 1100px;
-      margin: auto;
-      display: flex;
-      align-items: center;
-      gap: 80px;
-      width: 100%;
-    }
-
-    .hero-text {
-      flex: 1;
-    }
-
-    .hero-eyebrow {
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--brown-mid);
-      margin-bottom: 18px;
-    }
-
-    .hero-name {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 68px;
-      font-weight: 500;
-      line-height: 1.1;
-      color: var(--espresso);
-      margin-bottom: 16px;
-    }
-
-    .hero-title {
-      font-size: 16px;
-      font-weight: 400;
-      color: var(--brown-mid);
-      margin-bottom: 28px;
-      letter-spacing: 0.02em;
-    }
-
-    .hero-intro {
-      font-size: 17px;
-      line-height: 1.8;
-      color: var(--brown-dark);
-      max-width: 540px;
-      margin-bottom: 40px;
-    }
-
-    .btn-group {
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-
+    /* ── BUTTONS ── */
     .btn-primary {
-      display: inline-block;
-      padding: 14px 32px;
-      background: var(--espresso);
-      color: var(--cream);
-      font-family: 'Inter', sans-serif;
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      text-decoration: none;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
+      display: inline-block; padding: 13px 28px;
+      background: var(--espresso); color: var(--cream);
+      font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 600;
+      letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none;
+      border: none; border-radius: 4px; cursor: pointer;
       transition: background 0.25s, transform 0.2s;
     }
-
-    .btn-primary:hover {
-      background: var(--brown-dark);
-      transform: translateY(-2px);
-    }
+    .btn-primary:hover { background: var(--brown-dark); transform: translateY(-2px); }
 
     .btn-outline {
-      display: inline-block;
-      padding: 14px 32px;
-      background: transparent;
-      color: var(--espresso);
-      font-family: 'Inter', sans-serif;
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      text-decoration: none;
-      border: 1.5px solid var(--espresso);
-      border-radius: 4px;
-      cursor: pointer;
+      display: inline-block; padding: 13px 28px;
+      background: transparent; color: var(--espresso);
+      font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 600;
+      letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none;
+      border: 1.5px solid var(--espresso); border-radius: 4px; cursor: pointer;
       transition: background 0.25s, color 0.25s, transform 0.2s;
     }
+    .btn-outline:hover { background: var(--espresso); color: var(--cream); transform: translateY(-2px); }
 
-    .btn-outline:hover {
-      background: var(--espresso);
-      color: var(--cream);
-      transform: translateY(-2px);
+    .btn-sage {
+      display: inline-block; padding: 13px 28px;
+      background: var(--sage); color: #fff;
+      font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 600;
+      letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none;
+      border: none; border-radius: 4px; cursor: pointer;
+      transition: background 0.25s, transform 0.2s;
     }
-
-    .hero-photo-wrap {
-      flex-shrink: 0;
-      width: 340px;
-      height: 420px;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 24px 60px var(--shadow-deep);
-      position: relative;
-    }
-
-    .hero-photo-wrap::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      border-radius: 12px;
-      border: 1px solid rgba(255,255,255,0.4);
-      z-index: 1;
-    }
-
-    .hero-photo-wrap img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: top center;
-      display: block;
-    }
+    .btn-sage:hover { background: var(--sage-mid); transform: translateY(-2px); }
 
     /* ── SECTIONS ── */
-    section {
-      padding: 100px 40px;
-    }
+    section { padding: 100px 40px; }
+    .section-inner { max-width: 1060px; margin: auto; }
+    .section-label { font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--taupe); margin-bottom: 12px; }
+    .section-title { font-family: 'Cormorant Garamond', serif; font-size: 44px; font-weight: 500; color: var(--espresso); margin-bottom: 40px; line-height: 1.2; }
+    .divider { width: 48px; height: 2px; background: var(--sage); margin-bottom: 40px; }
 
-    .section-inner {
-      max-width: 1000px;
-      margin: auto;
-    }
+    /* ── HERO ── */
+    .hero { min-height: 100vh; display: flex; align-items: center; background: linear-gradient(135deg, var(--warm-white) 0%, var(--cream) 100%); padding: 120px 40px 80px; }
+    .hero-inner { max-width: 1100px; margin: auto; display: flex; align-items: center; gap: 80px; width: 100%; }
+    .hero-text { flex: 1; }
+    .hero-eyebrow { font-size: 12px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--sage); margin-bottom: 18px; }
+    .hero-name { font-family: 'Cormorant Garamond', serif; font-size: 68px; font-weight: 500; line-height: 1.1; color: var(--espresso); margin-bottom: 14px; }
+    .hero-title { font-size: 18px; font-weight: 600; color: var(--brown-dark); margin-bottom: 18px; letter-spacing: 0.01em; }
+    .hero-intro { font-size: 17px; line-height: 1.8; color: var(--brown-mid); max-width: 540px; margin-bottom: 40px; }
+    .btn-group { display: flex; gap: 14px; flex-wrap: wrap; }
 
-    .section-label {
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--taupe);
-      margin-bottom: 12px;
-    }
+    .hero-photo-wrap { flex-shrink: 0; width: 320px; height: 400px; border-radius: 12px; overflow: hidden; box-shadow: 0 24px 60px var(--shadow-deep); position: relative; }
+    .hero-photo-wrap::before { content: ''; position: absolute; inset: 0; border-radius: 12px; border: 1px solid rgba(255,255,255,0.4); z-index: 1; }
+    .hero-photo-wrap img { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; }
 
-    .section-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 44px;
-      font-weight: 500;
-      color: var(--espresso);
-      margin-bottom: 40px;
-      line-height: 1.2;
-    }
-
-    .divider {
-      width: 48px;
-      height: 2px;
-      background: var(--brown-light);
-      margin-bottom: 40px;
-    }
-
-    /* ── STORY ── */
-    .story-section {
-      background: var(--cream);
-    }
-
-    .story-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      align-items: start;
-    }
-
-    .story-text p {
-      font-size: 16px;
-      color: var(--brown-dark);
-      line-height: 1.9;
-      margin-bottom: 20px;
-    }
-
-    .story-text p:last-child {
-      margin-bottom: 0;
-    }
-
-    .story-stats {
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-    }
-
-    .stat-card {
-      background: var(--warm-white);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 28px 32px;
+    /* ── WHAT I DO ── */
+    .whatido-section { background: var(--cream); }
+    .whatido-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    .whatido-card {
+      background: var(--warm-white); border: 1px solid var(--border);
+      border-radius: 12px; padding: 32px 24px;
       box-shadow: 0 4px 20px var(--shadow);
+      transition: transform 0.2s, box-shadow 0.2s;
     }
+    .whatido-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px var(--shadow-deep); }
+    .whatido-icon { font-size: 22px; font-weight: 700; color: var(--sage); margin-bottom: 14px; letter-spacing: -0.02em; }
+    .whatido-title { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 500; color: var(--espresso); margin-bottom: 10px; }
+    .whatido-desc { font-size: 14px; color: var(--brown-mid); line-height: 1.7; }
 
-    .stat-number {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 48px;
-      font-weight: 600;
-      color: var(--espresso);
-      line-height: 1;
-      margin-bottom: 8px;
-    }
-
-    .stat-label {
-      font-size: 14px;
-      color: var(--brown-mid);
-      font-weight: 400;
-    }
-
-    /* ── PROJECT ── */
+    /* ── PROJECTS ── */
+    .projects-section { background: var(--warm-white); }
     .project-card {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 48px;
-      box-shadow: 0 8px 40px var(--shadow);
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 40px;
-      align-items: start;
+      background: var(--card-bg); border: 1px solid var(--border);
+      border-radius: 14px; padding: 44px;
+      box-shadow: 0 8px 40px var(--shadow); margin-bottom: 28px;
+      transition: transform 0.2s, box-shadow 0.2s;
     }
-
+    .project-card:hover { transform: translateY(-3px); box-shadow: 0 16px 56px var(--shadow-deep); }
+    .project-card.featured { border: 2px solid var(--sage); }
+    .project-featured-label {
+      display: inline-block; font-size: 10px; font-weight: 700;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: #fff; background: var(--sage);
+      border-radius: 4px; padding: 4px 12px; margin-bottom: 14px;
+    }
     .project-tag {
-      display: inline-block;
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--brown-mid);
-      background: var(--warm-white);
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      padding: 5px 12px;
-      margin-bottom: 20px;
+      display: inline-block; font-size: 11px; font-weight: 600;
+      letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--brown-mid); background: var(--warm-white);
+      border: 1px solid var(--border); border-radius: 4px;
+      padding: 5px 12px; margin-bottom: 16px;
     }
+    .project-name { font-family: 'Cormorant Garamond', serif; font-size: 32px; font-weight: 500; color: var(--espresso); margin-bottom: 14px; }
+    .project-desc { font-size: 16px; color: var(--brown-dark); line-height: 1.8; margin-bottom: 24px; max-width: 700px; }
+    .project-highlights { list-style: none; margin-bottom: 28px; }
+    .project-highlights li { font-size: 15px; color: var(--brown-dark); padding: 8px 0 8px 22px; position: relative; border-bottom: 1px solid var(--border); }
+    .project-highlights li:last-child { border-bottom: none; }
+    .project-highlights li::before { content: '→'; position: absolute; left: 0; color: var(--sage); font-size: 13px; }
+    .project-tools { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px; }
+    .tool-chip { font-size: 12px; font-weight: 500; color: var(--brown-dark); background: var(--warm-white); border: 1px solid var(--border); border-radius: 4px; padding: 6px 14px; }
+    .project-btn-row { display: flex; gap: 12px; flex-wrap: wrap; }
 
-    .project-name {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 34px;
-      font-weight: 500;
-      color: var(--espresso);
-      margin-bottom: 16px;
-    }
-
-    .project-desc {
-      font-size: 16px;
-      color: var(--brown-dark);
-      line-height: 1.8;
-      margin-bottom: 28px;
-      max-width: 560px;
-    }
-
-    .project-highlights {
-      list-style: none;
-      margin-bottom: 36px;
-    }
-
-    .project-highlights li {
-      font-size: 15px;
-      color: var(--brown-dark);
-      padding: 8px 0;
-      padding-left: 20px;
-      position: relative;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .project-highlights li:last-child {
-      border-bottom: none;
-    }
-
-    .project-highlights li::before {
-      content: '→';
-      position: absolute;
-      left: 0;
-      color: var(--taupe);
-      font-size: 13px;
-    }
-
-    .project-tools {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 32px;
-    }
-
-    .tool-chip {
-      font-size: 12px;
-      font-weight: 500;
-      color: var(--brown-dark);
-      background: var(--warm-white);
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      padding: 6px 14px;
-    }
-
-    .project-links {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      min-width: 160px;
+    .tableau-wrap { border-radius: 10px; overflow: hidden; border: 1px solid var(--border); margin-bottom: 28px; }
+    .coming-soon-badge {
+      display: inline-block; font-size: 11px; font-weight: 700;
+      letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--brown-mid); background: var(--cream);
+      border: 1.5px solid var(--border); border-radius: 4px; padding: 5px 14px;
     }
 
     /* ── SKILLS ── */
-    .skills-section {
-      background: var(--cream);
-    }
+    .skills-section { background: var(--cream); }
+    .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .skill-group { background: var(--warm-white); border: 1px solid var(--border); border-radius: 10px; padding: 32px; box-shadow: 0 4px 16px var(--shadow); }
+    .skill-group-title { font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--sage); margin-bottom: 20px; }
+    .skill-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .skill-list li { font-size: 15px; color: var(--brown-dark); display: flex; align-items: center; gap: 10px; }
+    .skill-list li::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--sage); flex-shrink: 0; }
 
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-    }
+    /* ── ABOUT ── */
+    .about-section { background: var(--warm-white); }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+    .about-text p { font-size: 16px; color: var(--brown-dark); line-height: 1.9; margin-bottom: 20px; }
+    .about-text p:last-child { margin-bottom: 0; }
+    .about-stats { display: flex; flex-direction: column; gap: 20px; }
+    .stat-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px; padding: 28px 32px; box-shadow: 0 4px 20px var(--shadow); }
+    .stat-number { font-family: 'Cormorant Garamond', serif; font-size: 48px; font-weight: 600; color: var(--espresso); line-height: 1; margin-bottom: 8px; }
+    .stat-label { font-size: 14px; color: var(--brown-mid); font-weight: 400; }
 
-    .skill-group {
-      background: var(--warm-white);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 32px;
-      box-shadow: 0 4px 16px var(--shadow);
-    }
-
-    .skill-group-title {
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--taupe);
-      margin-bottom: 20px;
-    }
-
-    .skill-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .skill-list li {
-      font-size: 15px;
-      color: var(--brown-dark);
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .skill-list li::before {
-      content: '';
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--brown-light);
-      flex-shrink: 0;
-    }
-
-    /* ── VALUE ── */
-    .value-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
-      margin-bottom: 48px;
-    }
-
-    .value-card {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 32px;
-      box-shadow: 0 4px 16px var(--shadow);
-    }
-
-    .value-icon {
-      font-size: 22px;
-      margin-bottom: 14px;
-    }
-
-    .value-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 22px;
-      font-weight: 500;
-      color: var(--espresso);
-      margin-bottom: 10px;
-    }
-
-    .value-desc {
-      font-size: 14px;
-      color: var(--brown-mid);
-      line-height: 1.8;
-    }
-
-    .roles-bar {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 32px 40px;
-      box-shadow: 0 4px 16px var(--shadow);
-    }
-
-    .roles-bar p {
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--taupe);
-      margin-bottom: 18px;
-    }
-
-    .roles-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .role-tag {
-      font-size: 14px;
-      font-weight: 500;
-      color: var(--espresso);
-      background: var(--warm-white);
-      border: 1.5px solid var(--espresso);
-      border-radius: 4px;
-      padding: 8px 20px;
-    }
+    /* ── RESUME ── */
+    .resume-section { background: var(--cream); }
+    .resume-inner { display: grid; grid-template-columns: 1fr auto; gap: 60px; align-items: center; }
+    .resume-text { font-size: 17px; color: var(--brown-dark); line-height: 1.9; }
 
     /* ── CONTACT ── */
-    .contact-section {
-      background: var(--espresso);
-    }
-
-    .contact-section .section-label {
-      color: var(--taupe);
-    }
-
-    .contact-section .section-title {
-      color: var(--cream);
-    }
-
-    .contact-section .divider {
-      background: var(--brown-mid);
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      align-items: start;
-    }
-
-    .contact-intro {
-      font-size: 16px;
-      color: var(--brown-light);
-      line-height: 1.9;
-    }
-
-    .contact-links {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-
-    .contact-item {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-
-    .contact-item-label {
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--taupe);
-    }
-
-    .contact-item a,
-    .contact-item span {
-      font-size: 16px;
-      color: var(--cream);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-
-    .contact-item a:hover {
-      color: var(--brown-light);
-    }
+    .contact-section { background: var(--espresso); }
+    .contact-section .section-label { color: var(--taupe); }
+    .contact-section .section-title { color: var(--cream); }
+    .contact-section .divider { background: var(--brown-mid); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+    .contact-intro { font-size: 16px; color: var(--brown-light); line-height: 1.9; }
+    .contact-links { display: flex; flex-direction: column; gap: 20px; }
+    .contact-item { display: flex; flex-direction: column; gap: 4px; }
+    .contact-item-label { font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--taupe); }
+    .contact-item a, .contact-item span { font-size: 16px; color: var(--cream); text-decoration: none; transition: color 0.2s; }
+    .contact-item a:hover { color: var(--brown-light); }
 
     /* ── LIGHTBOX ── */
-    .lightbox-overlay {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(26, 18, 8, 0.92);
-      z-index: 999;
-      justify-content: center;
-      align-items: center;
-      padding: 24px;
-      cursor: zoom-out;
-    }
-
-    .lightbox-overlay.active {
-      display: flex;
-    }
-
-    .lightbox-overlay img {
-      max-width: 92vw;
-      max-height: 88vh;
-      border-radius: 10px;
-      box-shadow: 0 24px 80px rgba(0,0,0,0.6);
-      object-fit: contain;
-    }
-
-    .lightbox-close {
-      position: fixed;
-      top: 20px;
-      right: 28px;
-      font-size: 32px;
-      color: var(--cream);
-      cursor: pointer;
-      line-height: 1;
-      opacity: 0.7;
-      transition: opacity 0.2s;
-    }
-
-    .lightbox-close:hover {
-      opacity: 1;
-    }
-
-    .sql-img {
-      cursor: zoom-in;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-
-    .sql-img:hover {
-      transform: scale(1.02);
-      box-shadow: 0 8px 32px var(--shadow-deep);
-    }
+    .lightbox-overlay { display: none; position: fixed; inset: 0; background: rgba(26,18,8,0.92); z-index: 999; justify-content: center; align-items: center; padding: 24px; cursor: zoom-out; }
+    .lightbox-overlay.active { display: flex; }
+    .lightbox-overlay img { max-width: 92vw; max-height: 88vh; border-radius: 10px; box-shadow: 0 24px 80px rgba(0,0,0,0.6); object-fit: contain; }
+    .lightbox-close { position: fixed; top: 20px; right: 28px; font-size: 32px; color: var(--cream); cursor: pointer; line-height: 1; opacity: 0.7; transition: opacity 0.2s; }
+    .lightbox-close:hover { opacity: 1; }
 
     /* ── FOOTER ── */
-    footer {
-      background: var(--black);
-      padding: 28px 40px;
-      text-align: center;
-    }
-
-    footer p {
-      font-size: 13px;
-      color: var(--brown-mid);
-      letter-spacing: 0.04em;
-    }
+    footer { background: var(--black); padding: 28px 40px; text-align: center; }
+    footer p { font-size: 13px; color: var(--brown-mid); letter-spacing: 0.04em; }
 
     /* ── MOBILE ── */
+    @media (max-width: 900px) {
+      .whatido-grid { grid-template-columns: repeat(2, 1fr); }
+    }
     @media (max-width: 768px) {
-      nav {
-        padding: 16px 20px;
-      }
-
-      .nav-links {
-        display: none;
-      }
-
-      .hero {
-        padding: 100px 20px 60px;
-      }
-
-      .hero-inner {
-        flex-direction: column-reverse;
-        gap: 40px;
-      }
-
-      .hero-name {
-        font-size: 46px;
-      }
-
-      .hero-photo-wrap {
-        width: 100%;
-        height: 320px;
-      }
-
-      section {
-        padding: 70px 20px;
-      }
-
-      .section-title {
-        font-size: 34px;
-      }
-
-      .story-grid,
-      .contact-grid,
-      .value-grid {
-        grid-template-columns: 1fr;
-        gap: 32px;
-      }
-
-      .skills-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .project-card {
-        grid-template-columns: 1fr;
-        padding: 32px 24px;
-      }
-
-      .project-links {
-        flex-direction: row;
-        flex-wrap: wrap;
-      }
-
-      .btn-primary, .btn-outline {
-        width: 100%;
-        text-align: center;
-      }
+      nav { padding: 16px 20px; }
+      .nav-links { display: none; }
+      .hero { padding: 100px 20px 60px; }
+      .hero-inner { flex-direction: column-reverse; gap: 40px; }
+      .hero-name { font-size: 46px; }
+      .hero-photo-wrap { width: 100%; height: 300px; }
+      section { padding: 70px 20px; }
+      .section-title { font-size: 34px; }
+      .whatido-grid { grid-template-columns: 1fr; }
+      .skills-grid { grid-template-columns: 1fr; }
+      .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 32px; }
+      .resume-inner { grid-template-columns: 1fr; gap: 28px; }
+      .project-card { padding: 28px 20px; }
+      .project-btn-row, .btn-group { flex-direction: column; }
+      .btn-primary, .btn-outline, .btn-sage { width: 100%; text-align: center; }
     }
   </style>
 </head>
@@ -712,11 +226,11 @@
   <nav>
     <a href="#hero" class="nav-logo">Tyra Forbes</a>
     <ul class="nav-links">
-      <li><a href="#story">My Story</a></li>
+      <li><a href="#hero">Home</a></li>
       <li><a href="#projects">Projects</a></li>
-      <li><a href="#samples">SQL Samples</a></li>
       <li><a href="#skills">Skills</a></li>
-      <li><a href="#value">Why Me</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#resume">Resume</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
@@ -725,33 +239,31 @@
   <section class="hero" id="hero">
     <div class="hero-inner">
       <div class="hero-text">
-        <p class="hero-eyebrow">Analyst &nbsp;·&nbsp; Operations &nbsp;·&nbsp; Client Success</p>
+        <p class="hero-eyebrow">Data Analyst &nbsp;·&nbsp; Tableau Developer &nbsp;·&nbsp; SQL Reporting</p>
         <h1 class="hero-name">Tyra<br/>Forbes</h1>
-        <p class="hero-title">Turning raw data into insights that people can actually see and use.</p>
+        <p class="hero-title">Data Analyst | Tableau Developer | SQL & Business Intelligence</p>
         <p class="hero-intro">
-          I bring 5+ years of frontline technical support experience into every analysis I touch —
-          which means I don't just crunch numbers, I understand the people and processes behind them.
-          What drives me is the moment data becomes a story: a dashboard that finally makes something
-          click, a report that changes how a team makes decisions.
+          I turn raw data into clear dashboards, reports, and insights that help teams make better business decisions.
         </p>
         <div class="btn-group">
+          <a href="#projects" class="btn-sage">View Tableau Dashboards</a>
           <a href="Tyra_Forbes_Resume.pdf" download class="btn-primary">Download Resume</a>
-          <a href="#projects" class="btn-outline">View My Work</a>
+          <a href="#contact" class="btn-outline">Contact Me</a>
         </div>
       </div>
       <div style="display:flex; flex-direction:column; gap:20px; flex-shrink:0;">
         <div class="hero-photo-wrap">
           <img src="tyra-headshot.png" alt="Tyra Forbes" />
         </div>
-        <div style="background:var(--card-bg); border:1px solid var(--border); border-radius:12px; padding:24px 28px; box-shadow:0 4px 20px var(--shadow);">
-          <p style="font-size:11px; font-weight:600; letter-spacing:0.18em; text-transform:uppercase; color:var(--taupe); margin-bottom:16px;">Education & Credentials</p>
-          <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:10px;">
+        <div style="background:var(--card-bg); border:1px solid var(--border); border-radius:12px; padding:22px 26px; box-shadow:0 4px 20px var(--shadow);">
+          <p style="font-size:11px; font-weight:600; letter-spacing:0.18em; text-transform:uppercase; color:var(--taupe); margin-bottom:14px;">Education & Credentials</p>
+          <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:9px;">
             <li style="display:flex; align-items:flex-start; gap:10px; font-size:13px; color:var(--brown-dark); line-height:1.5;">
-              <span style="color:var(--brown-light); margin-top:2px;">◆</span>
+              <span style="color:var(--sage); margin-top:2px;">◆</span>
               <span>B.S. Management Information Systems</span>
             </li>
             <li style="display:flex; align-items:flex-start; gap:10px; font-size:13px; color:var(--brown-dark); line-height:1.5;">
-              <span style="color:var(--brown-light); margin-top:2px;">◆</span>
+              <span style="color:var(--sage); margin-top:2px;">◆</span>
               <span>Google Data Analytics Certificate</span>
             </li>
             <li style="display:flex; align-items:flex-start; gap:10px; font-size:13px; color:var(--brown-dark); line-height:1.5;">
@@ -768,10 +280,6 @@
             </li>
             <li style="display:flex; align-items:flex-start; gap:10px; font-size:13px; color:var(--brown-dark); line-height:1.5;">
               <span style="color:var(--brown-light); margin-top:2px;">◇</span>
-              <span>Querying Databases Using SQL SELECT Statement</span>
-            </li>
-            <li style="display:flex; align-items:flex-start; gap:10px; font-size:13px; color:var(--brown-dark); line-height:1.5;">
-              <span style="color:var(--brown-light); margin-top:2px;">◇</span>
               <span>Share Data Through the Art of Visualization</span>
             </li>
           </ul>
@@ -780,181 +288,68 @@
     </div>
   </section>
 
-  <!-- STORY -->
-  <section class="story-section" id="story">
+  <!-- WHAT I DO -->
+  <section class="whatido-section" id="whatido">
     <div class="section-inner">
-      <p class="section-label">Background</p>
-      <h2 class="section-title">My Story</h2>
+      <p class="section-label">Expertise</p>
+      <h2 class="section-title">What I Do</h2>
       <div class="divider"></div>
-      <div class="story-grid">
-        <div class="story-text">
-          <p>
-            I didn't start in analytics — I started where the data lives: on the front lines.
-            For over five years, I worked in technical support, sitting at the intersection of
-            customer problems, system behavior, and operational gaps. I answered the questions
-            no dashboard could anticipate, and I learned to see patterns in the chaos.
-          </p>
-          <p>
-            Over time, I realized the most impactful thing I could do wasn't just solve individual
-            problems — it was understand why those problems kept happening. That curiosity pulled me
-            toward analysis. I started asking better questions, building reports, and finding ways to
-            surface insights that teams could actually use.
-          </p>
-          <p>
-            What I love most is bringing insights to life visually — building dashboards that make
-            complex data immediately clear, and turning scattered numbers into a narrative someone
-            can act on. There's something deeply satisfying about watching a well-built visualization
-            change the way a team thinks about a problem.
-          </p>
-          <p>
-            Today I combine that real-world operational grounding with technical skills in SQL, Python,
-            Tableau, and Excel to deliver analysis that is both rigorous and practical. I know what
-            it looks like when processes break, and I know how to use data to fix them.
-          </p>
+      <div class="whatido-grid">
+        <div class="whatido-card">
+          <div class="whatido-icon">[ Bar ]</div>
+          <h3 class="whatido-title">Tableau Dashboard Development</h3>
+          <p class="whatido-desc">Building interactive, visually clear dashboards that make complex data easy to understand and act on for business stakeholders.</p>
         </div>
-        <div class="story-stats">
-          <div class="stat-card">
-            <div class="stat-number">5+</div>
-            <div class="stat-label">Years in technical support & operations</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-number">6</div>
-            <div class="stat-label">Core analytics & reporting tools</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-number">∞</div>
-            <div class="stat-label">Passion for turning data into dashboards people actually love</div>
-          </div>
+        <div class="whatido-card">
+          <div class="whatido-icon">[ SQL ]</div>
+          <h3 class="whatido-title">SQL Data Analysis</h3>
+          <p class="whatido-desc">Writing queries to extract, clean, and analyze data from relational databases to answer business questions and surface trends.</p>
+        </div>
+        <div class="whatido-card">
+          <div class="whatido-icon">[ KPI ]</div>
+          <h3 class="whatido-title">KPI Reporting & Business Insights</h3>
+          <p class="whatido-desc">Designing KPI tracking reports and business summaries that give leadership a clear picture of performance and opportunities.</p>
+        </div>
+        <div class="whatido-card">
+          <div class="whatido-icon">[ Ops ]</div>
+          <h3 class="whatido-title">Operations & Support Analytics</h3>
+          <p class="whatido-desc">Applying 5+ years of support operations experience to analyze workflows, identify bottlenecks, and drive efficiency improvements.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- PROJECTS -->
-  <section id="projects">
+  <section class="projects-section" id="projects">
     <div class="section-inner">
       <p class="section-label">Featured Work</p>
       <h2 class="section-title">Projects</h2>
       <div class="divider"></div>
 
-      <div class="project-card">
-        <div>
-          <span class="project-tag">Node.js · SQL · API</span>
-          <h3 class="project-name">Job Allocation System</h3>
-          <p class="project-desc">
-            Designed and built a structured allocation system that matches students with job
-            opportunities using fit scores, business rules, and validation logic — reducing
-            duplicate placements and improving match quality end to end.
-          </p>
-          <ul class="project-highlights">
-            <li>Prevents duplicate job allocations through validation logic</li>
-            <li>Fit scoring improves placement quality and reduces manual effort</li>
-            <li>Structured rules make the allocation process auditable and consistent</li>
-            <li>Demonstrates analytical thinking applied to a real operational problem</li>
-          </ul>
-          <div class="project-tools">
-            <span class="tool-chip">Node.js</span>
-            <span class="tool-chip">SQL</span>
-            <span class="tool-chip">REST API</span>
-            <span class="tool-chip">Business Logic</span>
-            <span class="tool-chip">Data Validation</span>
-          </div>
-        </div>
-        <div class="project-links">
-          <a href="https://job-allocation-system.onrender.com/" target="_blank" class="btn-primary" style="text-align:center;">Live Demo</a>
-          <a href="https://github.com/tkeyamaf/job-allocation-system" target="_blank" class="btn-outline" style="text-align:center;">View Code</a>
-        </div>
-      </div>
-
-      <div class="project-card" style="margin-top:28px; display:block;">
-        <span class="project-tag">Tableau · Data Visualization · IT Operations</span>
-        <h3 class="project-name">IT Support Ticket Analysis Dashboard</h3>
+      <!-- PROJECT 1: Sales Performance (FEATURED) -->
+      <div class="project-card featured">
+        <div class="project-featured-label">Featured Tableau Project</div>
+        <div class="project-tag">Tableau · Excel · SQL</div>
+        <h3 class="project-name">Sales Performance & Customer Insights Dashboard</h3>
         <p class="project-desc">
-          Built an interactive Tableau dashboard to analyze IT support ticket data and uncover key trends
-          in issue types, priority levels, and departmental workload. This project draws directly from
-          my 5+ years in technical support — I didn't just analyze the data, I've lived it.
+          Built an interactive Tableau dashboard that analyzes sales performance, customer behavior, and product trends.
+          The dashboard helps stakeholders monitor KPIs, identify top-performing categories, track sales trends,
+          and uncover business opportunities.
         </p>
-        <ul class="project-highlights" style="margin-bottom:32px;">
-          <li>Identified that security and bug-related issues drive the highest ticket volume</li>
-          <li>Found most tickets fall under medium to high priority — surfacing where teams are most stretched</li>
-          <li>Interactive filters let users explore patterns by issue type across teams</li>
-          <li>Built with real domain knowledge that makes the insights sharper and more relevant</li>
+        <ul class="project-highlights">
+          <li>Sales and profit KPI tracking across categories and time periods</li>
+          <li>Customer and product performance analysis to identify top contributors</li>
+          <li>Trend analysis over time to surface seasonal patterns and growth opportunities</li>
+          <li>Interactive dashboard layout designed for business users and stakeholders</li>
         </ul>
 
-        <div style="border-radius:10px; overflow:hidden; border:1px solid var(--border); margin-bottom:28px;">
-          <div class='tableauPlaceholder' id='viz1774500107601' style='position:relative; width:100%;'>
+        <div class="tableau-wrap">
+          <div class='tableauPlaceholder' id='viz_sales' style='position:relative; width:100%;'>
             <noscript>
               <a href='#'>
-                <img alt='IT Support Ticket Analysis Dashboard' src='https://public.tableau.com/static/images/IT/ITSupportTicketAnalysisDashboard/Dashboard1/1_rss.png' style='border:none' />
-              </a>
-            </noscript>
-            <object class='tableauViz' style='display:none;'>
-              <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
-              <param name='embed_code_version' value='3' />
-              <param name='site_root' value='' />
-              <param name='name' value='ITSupportTicketAnalysisDashboard/Dashboard1' />
-              <param name='tabs' value='no' />
-              <param name='toolbar' value='yes' />
-              <param name='static_image' value='https://public.tableau.com/static/images/IT/ITSupportTicketAnalysisDashboard/Dashboard1/1.png' />
-              <param name='animate_transition' value='yes' />
-              <param name='display_static_image' value='yes' />
-              <param name='display_spinner' value='yes' />
-              <param name='display_overlay' value='yes' />
-              <param name='display_count' value='yes' />
-              <param name='language' value='en-US' />
-              <param name='filter' value='publish=yes' />
-            </object>
-          </div>
-          <script type='text/javascript'>
-            var divElement = document.getElementById('viz1774500107601');
-            var vizElement = divElement.getElementsByTagName('object')[0];
-            if (divElement.offsetWidth > 800) {
-              vizElement.style.width = '100%';
-              vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
-            } else if (divElement.offsetWidth > 500) {
-              vizElement.style.width = '100%';
-              vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
-            } else {
-              vizElement.style.width = '100%';
-              vizElement.style.height = '1027px';
-            }
-            var scriptElement = document.createElement('script');
-            scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-            vizElement.parentNode.insertBefore(scriptElement, vizElement);
-          </script>
-        </div>
-
-        <div class="project-tools">
-          <span class="tool-chip">Tableau</span>
-          <span class="tool-chip">Google Sheets</span>
-          <span class="tool-chip">Data Visualization</span>
-          <span class="tool-chip">IT Operations</span>
-          <span class="tool-chip">Trend Analysis</span>
-          <span class="tool-chip">Dashboard Design</span>
-        </div>
-
-        <a href="https://public.tableau.com/views/ITSupportTicketAnalysisDashboard/Dashboard1" target="_blank" class="btn-primary" style="display:inline-block; margin-top:8px;">View Full Dashboard</a>
-      </div>
-
-      <div class="project-card" style="margin-top:28px; display:block;">
-        <span class="project-tag">Tableau · SQL · Excel</span>
-        <h3 class="project-name">IT Support Performance & Ticket Analysis Dashboard</h3>
-        <p class="project-desc">
-          Analyzes IT support tickets to track resolution time, ticket volume, SLA performance, and
-          identify bottlenecks in support operations. Helps improve efficiency and customer satisfaction.
-        </p>
-        <ul class="project-highlights" style="margin-bottom:32px;">
-          <li>Tracks ticket volume trends and resolution time across support teams</li>
-          <li>Monitors SLA compliance to flag at-risk tickets before deadlines are missed</li>
-          <li>Surfaces bottlenecks in the support pipeline to drive operational improvements</li>
-          <li>Translates raw ticket data into clear, actionable insights for leadership</li>
-        </ul>
-
-        <div style="border-radius:10px; overflow:hidden; border:1px solid var(--border); margin-bottom:28px;">
-          <div class='tableauPlaceholder' id='viz1774500107602' style='position:relative; width:100%;'>
-            <noscript>
-              <a href='#'>
-                <img alt='IT Support Performance &amp; Ticket Analysis Dashboard' src='https://public.tableau.com/static/images/Sa/SalesPerformanceCustomerInsightsDashboard_17770565162730/Dashboard1/1_rss.png' style='border:none' />
+                <img alt='Sales Performance &amp; Customer Insights Dashboard'
+                  src='https://public.tableau.com/static/images/Sa/SalesPerformanceCustomerInsightsDashboard_17770565162730/Dashboard1/1_rss.png'
+                  style='border:none' />
               </a>
             </noscript>
             <object class='tableauViz' style='display:none;'>
@@ -975,79 +370,84 @@
             </object>
           </div>
           <script type='text/javascript'>
-            var divElement2 = document.getElementById('viz1774500107602');
-            var vizElement2 = divElement2.getElementsByTagName('object')[0];
-            if (divElement2.offsetWidth > 800) {
-              vizElement2.style.width = '100%';
-              vizElement2.style.height = (divElement2.offsetWidth * 0.75) + 'px';
-            } else if (divElement2.offsetWidth > 500) {
-              vizElement2.style.width = '100%';
-              vizElement2.style.height = (divElement2.offsetWidth * 0.75) + 'px';
-            } else {
-              vizElement2.style.width = '100%';
-              vizElement2.style.height = '1027px';
-            }
-            var scriptElement2 = document.createElement('script');
-            scriptElement2.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-            vizElement2.parentNode.insertBefore(scriptElement2, vizElement2);
+            (function () {
+              var div = document.getElementById('viz_sales');
+              var viz = div.getElementsByTagName('object')[0];
+              viz.style.width = '100%';
+              viz.style.height = (div.offsetWidth > 500 ? Math.round(div.offsetWidth * 0.75) : 900) + 'px';
+              var s = document.createElement('script');
+              s.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+              viz.parentNode.insertBefore(s, viz);
+            })();
           </script>
         </div>
 
+        <div class="project-tools">
+          <span class="tool-chip">Tableau</span>
+          <span class="tool-chip">Excel</span>
+          <span class="tool-chip">SQL</span>
+          <span class="tool-chip">KPI Tracking</span>
+          <span class="tool-chip">Sales Analytics</span>
+          <span class="tool-chip">Dashboard Design</span>
+        </div>
+        <div class="project-btn-row">
+          <a href="https://public.tableau.com/views/SalesPerformanceCustomerInsightsDashboard_17770565162730/Dashboard1" target="_blank" class="btn-sage">View Dashboard</a>
+        </div>
+      </div>
+
+      <!-- PROJECT 2: Job Allocation System -->
+      <div class="project-card">
+        <div class="project-tag">Node.js · SQL · REST API</div>
+        <h3 class="project-name">Job Allocation System</h3>
+        <p class="project-desc">
+          Designed and built a structured allocation system that matches students with job opportunities using fit scores,
+          business rules, and validation logic — reducing duplicate placements and improving match quality end to end.
+        </p>
+        <ul class="project-highlights">
+          <li>Prevents duplicate job allocations through validation logic</li>
+          <li>Fit scoring improves placement quality and reduces manual effort</li>
+          <li>Structured rules make the allocation process auditable and consistent</li>
+          <li>Demonstrates analytical thinking applied to a real operational problem</li>
+        </ul>
+        <div class="project-tools">
+          <span class="tool-chip">Node.js</span>
+          <span class="tool-chip">SQL</span>
+          <span class="tool-chip">REST API</span>
+          <span class="tool-chip">Business Logic</span>
+          <span class="tool-chip">Data Validation</span>
+        </div>
+        <div class="project-btn-row">
+          <a href="https://job-allocation-system.onrender.com/" target="_blank" class="btn-primary">Live Demo</a>
+          <a href="https://github.com/tkeyamaf/job-allocation-system" target="_blank" class="btn-outline">View Code</a>
+        </div>
+      </div>
+
+      <!-- PROJECT 3: IT Support Ticket Analysis – Coming Soon -->
+      <div class="project-card" style="opacity:0.88;">
+        <div style="display:flex; align-items:center; gap:12px; margin-bottom:14px; flex-wrap:wrap;">
+          <div class="project-tag" style="margin-bottom:0;">Tableau · SQL · Excel</div>
+          <span class="coming-soon-badge">Coming Soon</span>
+        </div>
+        <h3 class="project-name">IT Support Ticket Analysis Dashboard</h3>
+        <p class="project-desc">
+          Dashboard designed to analyze ticket volume, resolution time, SLA performance, and support trends
+          to improve operational efficiency and customer satisfaction.
+        </p>
+        <ul class="project-highlights">
+          <li>Ticket volume and resolution time tracking across support teams</li>
+          <li>SLA compliance monitoring to flag at-risk tickets before deadlines are missed</li>
+          <li>Support trend analysis to surface recurring issues and root causes</li>
+          <li>Bottleneck identification to drive operational efficiency improvements</li>
+        </ul>
         <div class="project-tools">
           <span class="tool-chip">Tableau</span>
           <span class="tool-chip">SQL</span>
           <span class="tool-chip">Excel</span>
           <span class="tool-chip">SLA Tracking</span>
           <span class="tool-chip">IT Operations</span>
-          <span class="tool-chip">Dashboard Design</span>
         </div>
-
-        <a href="https://public.tableau.com/views/SalesPerformanceCustomerInsightsDashboard_17770565162730/Dashboard1" target="_blank" class="btn-primary" style="display:inline-block; margin-top:8px;">View Full Dashboard</a>
       </div>
 
-    </div>
-  </section>
-
-  <!-- WORK SAMPLES -->
-  <section class="skills-section" id="samples">
-    <div class="section-inner">
-      <p class="section-label">Work Samples</p>
-      <h2 class="section-title">SQL in Practice</h2>
-      <div class="divider"></div>
-      <p style="font-size:16px; color:var(--brown-dark); line-height:1.8; max-width:700px; margin-bottom:40px;">
-        These samples demonstrate hands-on SQL skills — writing SELECT statements, working with JOINs,
-        declaring and using variables, and querying across multiple tables to extract unique and meaningful
-        information from a relational database.
-      </p>
-      <div style="display:grid; grid-template-columns:1fr 1fr; gap:28px;">
-
-        <div class="skill-group" style="padding:0; overflow:hidden;">
-          <img src="SQL1.png" alt="SQL Sample 1 – SELECT statements and JOINs"
-            class="sql-img"
-            style="width:100%; display:block; border-radius:10px 10px 0 0;"
-            onclick="openLightbox(this.src)" />
-          <div style="padding:20px 24px;">
-            <p style="font-size:11px; font-weight:600; letter-spacing:0.15em; text-transform:uppercase; color:var(--taupe); margin-bottom:6px;">SQL Sample 1</p>
-            <p style="font-size:14px; color:var(--brown-dark); line-height:1.7;">
-              SELECT statements, table JOINs, and filtering to pull targeted data across related database tables.
-            </p>
-          </div>
-        </div>
-
-        <div class="skill-group" style="padding:0; overflow:hidden;">
-          <img src="SQL2.png" alt="SQL Sample 2 – Variables and unique record queries"
-            class="sql-img"
-            style="width:100%; display:block; border-radius:10px 10px 0 0;"
-            onclick="openLightbox(this.src)" />
-          <div style="padding:20px 24px;">
-            <p style="font-size:11px; font-weight:600; letter-spacing:0.15em; text-transform:uppercase; color:var(--taupe); margin-bottom:6px;">SQL Sample 2</p>
-            <p style="font-size:14px; color:var(--brown-dark); line-height:1.7;">
-              Using variables and DISTINCT logic to locate unique records and isolate specific information within a database.
-            </p>
-          </div>
-        </div>
-
-      </div>
     </div>
   </section>
 
@@ -1059,32 +459,31 @@
       <div class="divider"></div>
       <div class="skills-grid">
         <div class="skill-group">
-          <p class="skill-group-title">Data & Analytics</p>
-          <ul class="skill-list">
-            <li>SQL</li>
-            <li>Python</li>
-            <li>Excel (Advanced)</li>
-            <li>Data Analysis</li>
-            <li>Data Visualization</li>
-          </ul>
-        </div>
-        <div class="skill-group">
-          <p class="skill-group-title">Reporting & BI</p>
+          <p class="skill-group-title">Technical Skills</p>
           <ul class="skill-list">
             <li>Tableau</li>
-            <li>Dashboards & Reports</li>
-            <li>KPI Tracking</li>
-            <li>Trend Analysis</li>
-            <li>Business Reporting</li>
+            <li>SQL</li>
+            <li>Excel</li>
+            <li>Python</li>
+            <li>Power BI</li>
           </ul>
         </div>
         <div class="skill-group">
-          <p class="skill-group-title">Operations & Support</p>
+          <p class="skill-group-title">Analytics Skills</p>
           <ul class="skill-list">
-            <li>Salesforce</li>
-            <li>Zendesk</li>
-            <li>Customer Support Ops</li>
+            <li>Dashboard Design</li>
+            <li>KPI Reporting</li>
+            <li>Data Cleaning</li>
+            <li>Data Validation</li>
+            <li>Trend Analysis</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <p class="skill-group-title">Business Skills</p>
+          <ul class="skill-list">
+            <li>Stakeholder Communication</li>
             <li>Problem Solving</li>
+            <li>Operations Reporting</li>
             <li>Process Improvement</li>
           </ul>
         </div>
@@ -1092,58 +491,61 @@
     </div>
   </section>
 
-  <!-- VALUE / WHY ME -->
-  <section id="value">
+  <!-- ABOUT -->
+  <section class="about-section" id="about">
     <div class="section-inner">
-      <p class="section-label">What I Bring</p>
-      <h2 class="section-title">Why Work With Me</h2>
+      <p class="section-label">Background</p>
+      <h2 class="section-title">About Me</h2>
       <div class="divider"></div>
-
-      <div class="value-grid">
-        <div class="value-card">
-          <div class="value-icon">◈</div>
-          <h4 class="value-title">Context Others Miss</h4>
-          <p class="value-desc">
-            Years on the support floor taught me how businesses actually operate — not just how
-            they're supposed to. I bring that context to every analysis I produce.
+      <div class="about-grid">
+        <div class="about-text">
+          <p>
+            I am a Data Analyst with 5+ years of experience in technical support, operations, and
+            data-driven problem solving. I specialize in SQL, Tableau dashboards, KPI reporting, and
+            turning business questions into actionable insights.
+          </p>
+          <p>
+            My background in support operations gives me a strong understanding of how data can
+            improve processes, identify trends, and support better decision-making. I didn't just
+            study data — I've worked in the environments where it matters most.
+          </p>
+          <p>
+            What drives me is the moment data becomes a story: a dashboard that finally makes
+            something click, a report that changes how a team makes decisions. I bring both the
+            technical skills and the real-world context to make that happen.
           </p>
         </div>
-        <div class="value-card">
-          <div class="value-icon">◈</div>
-          <h4 class="value-title">Insights Brought to Life</h4>
-          <p class="value-desc">
-            I genuinely love the craft of visualization — building dashboards and reports that make
-            data impossible to ignore. I don't hand people numbers; I give them clarity.
-          </p>
-        </div>
-        <div class="value-card">
-          <div class="value-icon">◈</div>
-          <h4 class="value-title">Communication Across Teams</h4>
-          <p class="value-desc">
-            I've spent years bridging the gap between technical systems and non-technical people.
-            I speak both languages fluently, making cross-functional collaboration natural.
-          </p>
-        </div>
-        <div class="value-card">
-          <div class="value-icon">◈</div>
-          <h4 class="value-title">Drive to Keep Growing</h4>
-          <p class="value-desc">
-            I made a deliberate career shift because I wanted to create more impact. That
-            intentionality shows up in how I approach every project — with focus and follow-through.
-          </p>
+        <div class="about-stats">
+          <div class="stat-card">
+            <div class="stat-number">5+</div>
+            <div class="stat-label">Years in technical support & operations</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">3+</div>
+            <div class="stat-label">Tableau dashboards built & published</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">6</div>
+            <div class="stat-label">Core analytics & reporting tools</div>
+          </div>
         </div>
       </div>
+    </div>
+  </section>
 
-      <div class="roles-bar">
-        <p>Open to opportunities in</p>
-        <div class="roles-list">
-          <span class="role-tag">Data Analytics</span>
-          <span class="role-tag">Operations Analysis</span>
-          <span class="role-tag">Business Intelligence</span>
-          <span class="role-tag">Reporting & Insights</span>
-          <span class="role-tag">Client Success</span>
-          <span class="role-tag">Business Support</span>
-        </div>
+  <!-- RESUME -->
+  <section class="resume-section" id="resume">
+    <div class="section-inner">
+      <p class="section-label">Experience</p>
+      <h2 class="section-title">Resume</h2>
+      <div class="divider"></div>
+      <div class="resume-inner">
+        <p class="resume-text">
+          View my resume to learn more about my experience in data analysis, SQL reporting,
+          Tableau dashboard development, and technical operations. Available for Data Analyst,
+          Tableau Developer, and SQL Reporting roles.
+        </p>
+        <a href="Tyra_Forbes_Resume.pdf" download class="btn-primary" style="white-space:nowrap;">Download Resume</a>
       </div>
     </div>
   </section>
@@ -1156,9 +558,9 @@
       <div class="divider"></div>
       <div class="contact-grid">
         <p class="contact-intro">
-          I'm currently open to new opportunities in data analytics, operations, and client success.
-          If you're looking for someone who combines analytical skills with real operational experience —
-          I'd love to hear from you.
+          I'm currently open to new opportunities in data analytics, Tableau development, SQL reporting,
+          and business intelligence. If you're looking for someone who combines analytical skills with
+          real operational experience — I'd love to hear from you.
         </p>
         <div class="contact-links">
           <div class="contact-item">
@@ -1173,6 +575,10 @@
             <span class="contact-item-label">LinkedIn</span>
             <a href="https://www.linkedin.com/in/tyra-forbes-7684551a1/" target="_blank">View Profile</a>
           </div>
+          <div class="contact-item">
+            <span class="contact-item-label">GitHub</span>
+            <a href="https://github.com/tkeyamaf" target="_blank">github.com/tkeyamaf</a>
+          </div>
           <div class="contact-item" style="margin-top:8px;">
             <a href="Tyra_Forbes_Resume.pdf" download class="btn-primary" style="display:inline-block; text-align:center;">Download Resume</a>
           </div>
@@ -1184,12 +590,12 @@
   <!-- LIGHTBOX -->
   <div class="lightbox-overlay" id="lightbox" onclick="closeLightbox()">
     <span class="lightbox-close" onclick="closeLightbox()">&#x2715;</span>
-    <img id="lightbox-img" src="" alt="SQL Sample enlarged" />
+    <img id="lightbox-img" src="" alt="enlarged" />
   </div>
 
   <!-- FOOTER -->
   <footer>
-    <p>© 2026 Tyra Forbes · All rights reserved</p>
+    <p>© 2026 Tyra Forbes &nbsp;·&nbsp; Data Analyst & Tableau Developer &nbsp;·&nbsp; All rights reserved</p>
   </footer>
 
   <script>
@@ -1202,9 +608,7 @@
       document.getElementById('lightbox').classList.remove('active');
       document.body.style.overflow = '';
     }
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') closeLightbox();
-    });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeLightbox(); });
   </script>
 </body>
 </html>
